@@ -72,6 +72,9 @@ action("build_node") {
   if (is_linux) {
     outputs = [ "$target_out_dir/Release/lib/libnode.so" ]
   }
+  if (is_win) {
+    outputs = [ "$target_out_dir/Release/node.dll" ]
+  }
 }
 
 node_libs = get_target_outputs(":build_node")
@@ -86,6 +89,7 @@ config("node_config") {
   include_dirs = [
     "//third_party/electron_node/src",
     "//third_party/electron_node/deps/uv/include",
+    "//third_party/electron_node/deps",
     "//third_party/electron_node/deps/cares/include",
   ]
   libs = node_libs

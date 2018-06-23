@@ -9,7 +9,7 @@
 #include "base/logging.h"
 
 extern "C" {
-#include "vendor/node/deps/uv/src/win/internal.h"
+#include "uv/src/win/internal.h"
 }
 
 namespace atom {
