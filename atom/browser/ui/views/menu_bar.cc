@@ -178,7 +178,7 @@ void MenuBar::UpdateViewColors() {
   }
 #elif defined(OS_WIN)
   for (auto* child : GetChildrenInZOrder()) {
-    auto button = static_cast<SubmenuButton*>(child);
+    auto* button = static_cast<SubmenuButton*>(child);
     button->SetUnderlineColor(color_utils::GetSysSkColor(COLOR_MENUTEXT));
   }
 #endif

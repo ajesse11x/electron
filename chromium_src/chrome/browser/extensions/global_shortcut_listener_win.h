@@ -21,18 +21,18 @@ namespace extensions {
 class GlobalShortcutListenerWin : public GlobalShortcutListener {
  public:
   GlobalShortcutListenerWin();
-  virtual ~GlobalShortcutListenerWin();
+  ~GlobalShortcutListenerWin() override;
 
  private:
   // The implementation of our Window Proc, called by SingletonHwndObserver.
   void OnWndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam);
 
   // GlobalShortcutListener implementation.
-  virtual void StartListening() override;
-  virtual void StopListening() override;
-  virtual bool RegisterAcceleratorImpl(
+  void StartListening() override;
+  void StopListening() override;
+  bool RegisterAcceleratorImpl(
       const ui::Accelerator& accelerator) override;
-  virtual void UnregisterAcceleratorImpl(
+  void UnregisterAcceleratorImpl(
       const ui::Accelerator& accelerator) override;
 
   // Whether this object is listening for global shortcuts.

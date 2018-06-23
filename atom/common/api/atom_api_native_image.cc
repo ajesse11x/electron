@@ -245,7 +245,7 @@ HICON NativeImage::GetHICON(int size) {
 
   // First try loading the icon with specified size.
   if (!hicon_path_.empty()) {
-    hicons_[size] = std::move(ReadICOFromPath(size, hicon_path_));
+    hicons_[size] = ReadICOFromPath(size, hicon_path_);
     return hicons_[size].get();
   }
 
@@ -253,7 +253,7 @@ HICON NativeImage::GetHICON(int size) {
   if (image_.IsEmpty())
     return NULL;
   hicons_[size] =
-      std::move(IconUtil::CreateHICONFromSkBitmap(image_.AsBitmap()));
+      IconUtil::CreateHICONFromSkBitmap(image_.AsBitmap());
   return hicons_[size].get();
 }
 #endif

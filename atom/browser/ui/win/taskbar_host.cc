@@ -50,6 +50,10 @@ bool GetThumbarButtonFlags(const std::vector<std::string>& flags,
 
 }  // namespace
 
+TaskbarHost::ThumbarButton::ThumbarButton() = default;
+TaskbarHost::ThumbarButton::ThumbarButton(const TaskbarHost::ThumbarButton&) = default;
+TaskbarHost::ThumbarButton::~ThumbarButton() = default;
+
 TaskbarHost::TaskbarHost() {}
 
 TaskbarHost::~TaskbarHost() {}
